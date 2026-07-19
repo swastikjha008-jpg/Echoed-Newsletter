@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: echoed-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run start:server
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3-flash-preview
+      - key: ALLOWED_ORIGIN
+        sync: false
